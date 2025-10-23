@@ -1,18 +1,15 @@
 {
-    "id": 57436521,
-    "name": "SampleLevel1",
-    "author": "LevelUploader",
-    "creators": ["Creator1", "Creator2", "Creator3"],
-    "verifier": "Verifier",
-    "verification": "https://www.youtube.com/watch?v=ISTl28wKSXc",
-    "percentToQualify": 56,
-    "password": "Not Copyable",
+    "id": 127325331,
+    "name": "Atomic Damage",
+    "author": "ege187",
+    "creators": ["ege187"],
+    "verifier": "ege187",
+    "verification": "https://youtu.be/gO7cNLjBOyc",
+    "percentToQualify": No list %,
+    "password": "No Password",
     "records": [
         {
-            "user": "Sample_Victor_1",
-            "link": "https://www.youtube.com/watch?v=MgJeijBGKHU",
-            "percent": 100,
-            "hz": 360
+
         }
     ]
 }
