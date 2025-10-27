@@ -8,5 +8,17 @@
     "percentToQualify": "63",
     "password": "Free To Copy",
     "records": [
+        {
+        "user": "ege27_",
+            "link": "",
+            "percent": 100,
+            "hz": 180
+        },
+        {
+        "user": "Onur420",
+            "link": "",
+            "percent": 100,
+            "hz": 180
+        }
     ]
 }
