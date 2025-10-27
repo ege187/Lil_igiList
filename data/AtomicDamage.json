@@ -8,5 +8,11 @@
     "percentToQualify": 75,
     "password": "Free To Copy",
     "records": [
+        {
+        "user": "LouiLatino",
+            "link": "https://youtu.be/IuAyVioHYuU",
+            "percent": 100,
+            "hz": 240
+        }
     ]
 }
