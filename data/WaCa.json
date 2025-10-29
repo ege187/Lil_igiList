@@ -1,0 +1,18 @@
+{
+    "id": 127354242,
+    "name": "WaCa",
+    "author": "gPaceg",
+    "creators": ["gPaceg"],
+    "verifier": "raziel938",
+    "verification": "https://youtu.be/IRWwrvFTurk",
+    "percentToQualify": "70",
+    "password": "Free To Copy",
+    "records": [
+        {
+        "user": "ege27_",
+            "link": "https://www.youtube.com/watch?v=mmdm5omc9hs",
+            "percent": 100,
+            "hz": 165
+        }
+    ]
+}
