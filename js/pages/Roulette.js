@@ -169,7 +169,7 @@ export default {
 
             this.loading = true;
 
-            const fullList = await fetchList();
+            const fullList = await fetchList2();
 
             if (fullList.filter(([_, err]) => err).length > 0) {
                 this.loading = false;
