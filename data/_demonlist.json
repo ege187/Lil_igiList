@@ -37,6 +37,42 @@
         "password": "None"
     },
     {
+        "name": "Cognition",
+        "id": 57600307,
+        "author": "Endlevel",
+        "creators": ["Endlevel"],
+        "verifier": "ege27_",
+        "percentToQualify": 73,
+        "verification": "https://www.youtube.com/watch?v=8w6WrhIvjPY",
+        "records": [
+        ],
+        "password": "None"
+    },
+    {
+        "name": "Cosmic Cyclone",
+        "id": 76159410,
+        "author": "APTeam",
+        "creators": ["APT"],
+        "verifier": "ege27_",
+        "percentToQualify": 74,
+        "verification": "https://www.youtube.com/watch?v=NFVTY0Jl_JE",
+        "records": [
+        ],
+        "password": "None"
+    },
+    {
+        "name": "RUST",
+        "id": 71912451,
+        "author": "neigefeu",
+        "creators": ["neigefeu"],
+        "verifier": "raziel938",
+        "percentToQualify": 70,
+        "verification": "https://www.youtube.com/watch?v=omqcOTlrFhc",
+        "records": [
+        ],
+        "password": "None"
+    },
+    {
         "name": "Shimmer",
         "id": 94156085,
         "author": "Amplitron",
