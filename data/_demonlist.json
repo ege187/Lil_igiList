@@ -1,9 +1,9 @@
 [
     {
-        "name": "Level 1",
-        "id": 12345,
-        "author": "AuthorName",
-        "creators": ["Creator1", "Creator2"],
+        "name": "Viprin UFO",
+        "id": 107238250,
+        "author": "nothawkyre",
+        "creators": ["nothawkyre and more"],
         "verifier": "VerifierName",
         "percentToQualify": 100,
         "verification": "https://youtube.com/...video",
