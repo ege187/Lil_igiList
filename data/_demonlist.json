@@ -131,6 +131,56 @@
         "records": [
         ],
         "password": "None"
-    }
+    },
+    {
+        "name": "Intrusive ID",
+        "id": 107100184,
+        "author": "pasiblitz",
+        "creators": ["pasiblitz"],
+        "verifier": "ege27_",
+        "percentToQualify": 70,
+        "verification": "",
+        "records": [
+        ],
+        "password": "None"
+    },
+    {
+        "name": "Biohazard",
+        "id": 61997741,
+        "author": "Artu",
+        "creators": ["Artu"],
+        "verifier": "ege27_",
+        "percentToQualify": 67,
+        "verification": "https://www.youtube.com/watch?v=1KGs87pGfc0",
+        "records": [
+        ],
+        "password": "None"
+    },
+    {
+        "name": "Bloodbath",
+        "id": 61997741,
+        "author": "Artu",
+        "creators": ["Artu"],
+        "verifier": "ege27_",
+        "percentToQualify": 67,
+        "verification": "https://www.tiktok.com/@ege27__/video/7318024015396818208",
+        "records": [
+        ],
+        "password": "None"
+    },
+    {
+        "name": "gravity",
+        "id": 77008332,
+        "author": "Kaza",
+        "creators": ["Kaza"],
+        "verifier": "Onur420",
+        "percentToQualify": 67,
+        "verification": "",
+        "records": [
+            { "user": "ege27_", "percent": 100, "link": "https://www.youtube.com/watch?v=gXZzyYsD-K4"},
+            { "user": "raziel938", "percent": 100, "link": "https://www.youtube.com/watch?v=G57rNR8IfxU"},
+        ],
+        "password": "None"
+    },
     
 ]
