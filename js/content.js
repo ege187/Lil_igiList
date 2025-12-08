@@ -37,7 +37,7 @@ export async function fetchList() {
 }
 
 export async function fetchList2() {
-    const listResult = await fetch(`${dir}/_list2.json`); // zweite Liste
+    const listResult = await fetch(`${dir}/_demonlist.json`); // zweite Liste
     try {
         const list = await listResult.json();
         return await Promise.all(
