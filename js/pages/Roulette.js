@@ -1,4 +1,4 @@
-import { fetchList } from '../content.js';
+import { fetchList2 } from '../content.js';
 import { getThumbnailFromId, getYoutubeIdFromUrl, shuffle } from '../util.js';
 
 import Spinner from '../components/Spinner.js';
