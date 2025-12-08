@@ -37,35 +37,23 @@ export async function fetchList() {
 }
 
 export async function fetchList2() {
-    const listResult = await fetch(`${dir}/_demonlist.json`); // zweite Liste
     try {
-        const list = await listResult.json();
-        return await Promise.all(
-            list.map(async (path, rank) => {
-                const levelResult = await fetch(`${dir}/${path}.json`);
-                try {
-                    const level = await levelResult.json();
-                    return [
-                        {
-                            ...level,
-                            path,
-                            records: level.records.sort(
-                                (a, b) => b.percent - a.percent,
-                            ),
-                        },
-                        null,
-                    ];
-                } catch {
-                    console.error(`Failed to load level #${rank + 1} ${path}.`);
-                    return [null, path];
-                }
-            }),
-        );
-    } catch {
-        console.error(`Failed to load list2.`);
+        const res = await fetch(`${dir}/_demonlist.json`);
+        const list = await res.json();
+
+        return list.map(level => [
+            {
+                ...level,
+                records: level.records ? level.records.sort((a, b) => b.percent - a.percent) : []
+            },
+            null
+        ]);
+    } catch (err) {
+        console.error("Failed to load list2:", err);
         return null;
     }
 }
+
 
 export async function fetchEditors() {
     try {
