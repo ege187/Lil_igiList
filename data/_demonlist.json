@@ -83,6 +83,54 @@
         "records": [
         ],
         "password": "None"
-    }
+    },
+    {
+        "name": "Cobwebs",
+        "id": 82172844,
+        "author": "NineDice",
+        "creators": ["NineDice"],
+        "verifier": "Onur420",
+        "percentToQualify": 69,
+        "verification": "https://www.youtube.com/watch?v=GANYiPk7a74",
+        "records": [
+        ],
+        "password": "None"
+    },
+    {
+        "name": "RUST",
+        "id": 71912451,
+        "author": "neigefeu",
+        "creators": ["neigefeu"],
+        "verifier": "raziel938",
+        "percentToQualify": 70,
+        "verification": "https://www.youtube.com/watch?v=omqcOTlrFhc",
+        "records": [
+        ],
+        "password": "None"
+    },
+    {
+        "name": "Arctic Lights",
+        "id": 52919433,
+        "author": "Metalface221",
+        "creators": ["Metalface221"],
+        "verifier": "raziel938",
+        "percentToQualify": 69,
+        "verification": "https://www.youtube.com/watch?v=A2QJKsNt9tU",
+        "records": [
+        ],
+        "password": "None"
+    },
+    {
+        "name": "Catalyze",
+        "id": 50333567,
+        "author": "ZephiroX",
+        "creators": ["ZephiroX"],
+        "verifier": "raziel938",
+        "percentToQualify": 67,
+        "verification": "https://www.youtube.com/watch?v=1KGs87pGfc0",
+        "records": [
+        ],
+        "password": "None"
+    },
     
 ]
