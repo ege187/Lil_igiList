@@ -18,9 +18,7 @@ export async function fetchList() {
                         {
                             ...level,
                             path,
-                            records: level.records.sort(
-                                (a, b) => b.percent - a.percent,
-                            ),
+                            records: level.records.sort((a, b) => b.percent - a.percent),
                         },
                         null,
                     ];
@@ -28,7 +26,7 @@ export async function fetchList() {
                     console.error(`Failed to load level #${rank + 1} ${path}.`);
                     return [null, path];
                 }
-            }),
+            })
         );
     } catch {
         console.error(`Failed to load list.`);
@@ -54,7 +52,6 @@ export async function fetchList2() {
     }
 }
 
-
 export async function fetchEditors() {
     try {
         const editorsResults = await fetch(`${dir}/_editors.json`);
@@ -77,45 +74,31 @@ export async function fetchLeaderboard() {
             return;
         }
 
-        // --- Sicherstellen, dass verifier existiert ---
         const verifierName = level.verifier ? level.verifier.toLowerCase() : null;
-
         const verifier =
-            Object.keys(scoreMap).find(
-                (u) => verifierName && u.toLowerCase() === verifierName
-            ) || level.verifier || "Unknown";
+            Object.keys(scoreMap).find(u => verifierName && u.toLowerCase() === verifierName) ||
+            level.verifier ||
+            "Unknown";
 
-        scoreMap[verifier] ??= {
-            verified: [],
-            completed: [],
-            progressed: [],
-        };
-
-        const { verified } = scoreMap[verifier];
-        verified.push({
+        scoreMap[verifier] ??= { verified: [], completed: [], progressed: [] };
+        scoreMap[verifier].verified.push({
             rank: rank + 1,
             level: level.name || `Unnamed Level ${rank + 1}`,
             score: score(rank + 1, 100, level.percentToQualify || 100),
             link: level.verification || "",
         });
 
-        // --- Records ---
         if (Array.isArray(level.records)) {
-            level.records.forEach((record) => {
+            level.records.forEach(record => {
                 const userName = record.user ? record.user.toLowerCase() : null;
-
                 const user =
-                    Object.keys(scoreMap).find(
-                        (u) => userName && u.toLowerCase() === userName
-                    ) || record.user || "Unknown";
+                    Object.keys(scoreMap).find(u => userName && u.toLowerCase() === userName) ||
+                    record.user ||
+                    "Unknown";
 
-                scoreMap[user] ??= {
-                    verified: [],
-                    completed: [],
-                    progressed: [],
-                };
-
+                scoreMap[user] ??= { verified: [], completed: [], progressed: [] };
                 const { completed, progressed } = scoreMap[user];
+
                 if (record.percent === 100) {
                     completed.push({
                         rank: rank + 1,
@@ -128,11 +111,7 @@ export async function fetchLeaderboard() {
                         rank: rank + 1,
                         level: level.name || `Unnamed Level ${rank + 1}`,
                         percent: record.percent || 0,
-                        score: score(
-                            rank + 1,
-                            record.percent || 0,
-                            level.percentToQualify || 100
-                        ),
+                        score: score(rank + 1, record.percent || 0, level.percentToQualify || 100),
                         link: record.link || "",
                     });
                 }
@@ -140,19 +119,76 @@ export async function fetchLeaderboard() {
         }
     });
 
-
-    // --- Ergebnisse zusammenbauen ---
     const res = Object.entries(scoreMap).map(([user, scores]) => {
         const { verified, completed, progressed } = scores;
-        const total = [verified, completed, progressed]
-            .flat()
-            .reduce((prev, cur) => prev + cur.score, 0);
+        const total = [verified, completed, progressed].flat().reduce((prev, cur) => prev + cur.score, 0);
+        return { user, total: round(total), ...scores };
+    });
 
-        return {
-            user,
-            total: round(total),
-            ...scores,
-        };
+    return [res.sort((a, b) => b.total - a.total), errs];
+}
+
+export async function fetchLeaderboard2() {
+    const list = await fetchList2();
+
+    const scoreMap = {};
+    const errs = [];
+
+    list.forEach(([level, err], rank) => {
+        if (err || !level) {
+            errs.push(err || `Unknown level at rank ${rank + 1}`);
+            return;
+        }
+
+        const verifierName = level.verifier ? level.verifier.toLowerCase() : null;
+        const verifier =
+            Object.keys(scoreMap).find(u => verifierName && u.toLowerCase() === verifierName) ||
+            level.verifier ||
+            "Unknown";
+
+        scoreMap[verifier] ??= { verified: [], completed: [], progressed: [] };
+        scoreMap[verifier].verified.push({
+            rank: rank + 1,
+            level: level.name || `Unnamed Level ${rank + 1}`,
+            score: score(rank + 1, 100, level.percentToQualify || 100),
+            link: level.verification || "",
+        });
+
+        if (Array.isArray(level.records)) {
+            level.records.forEach(record => {
+                const userName = record.user ? record.user.toLowerCase() : null;
+                const user =
+                    Object.keys(scoreMap).find(u => userName && u.toLowerCase() === userName) ||
+                    record.user ||
+                    "Unknown";
+
+                scoreMap[user] ??= { verified: [], completed: [], progressed: [] };
+                const { completed, progressed } = scoreMap[user];
+
+                if (record.percent === 100) {
+                    completed.push({
+                        rank: rank + 1,
+                        level: level.name || `Unnamed Level ${rank + 1}`,
+                        score: score(rank + 1, 100, level.percentToQualify || 100),
+                        link: record.link || "",
+                    });
+                } else {
+                    progressed.push({
+                        rank: rank + 1,
+                        level: level.name || `Unnamed Level ${rank + 1}`,
+                        percent: record.percent || 0,
+                        score: score(rank + 1, record.percent || 0, level.percentToQualify || 100),
+                        link: record.link || "",
+                    });
+                }
+            });
+        }
+    });
+
+    const res = Object.entries(scoreMap).map(([user, scores]) => {
+        const { verified, completed, progressed } = scores;
+        const total = [verified, completed, progressed].flat().reduce((prev, cur) => prev + cur.score, 0);
+        return { user, total: round(total), ...scores };
     });
 
     return [res.sort((a, b) => b.total - a.total), errs];
