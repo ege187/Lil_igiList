@@ -141,7 +141,7 @@ export async function fetchLeaderboard() {
     });
 
     export async function fetchLeaderboard2() {
-    const list = await fetchList();
+    const list = await fetchList2();
 
     const scoreMap = {};
     const errs = [];
