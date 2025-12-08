@@ -157,20 +157,3 @@ export async function fetchLeaderboard() {
 
     return [res.sort((a, b) => b.total - a.total), errs];
 }
-
-    // --- Ergebnisse zusammenbauen ---
-    const res = Object.entries(scoreMap).map(([user, scores]) => {
-        const { verified, completed, progressed } = scores;
-        const total = [verified, completed, progressed]
-            .flat()
-            .reduce((prev, cur) => prev + cur.score, 0);
-
-        return {
-            user,
-            total: round(total),
-            ...scores,
-        };
-    });
-
-    return [res.sort((a, b) => b.total - a.total), errs];
-}
