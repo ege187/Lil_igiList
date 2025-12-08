@@ -1,0 +1,30 @@
+{
+    "id": 127325331,
+    "name": "Atomic Damage",
+    "author": "ege27_",
+    "creators": ["ege27_"],
+    "verifier": "ege27_",
+    "verification": "https://www.youtube.com/watch?v=qZmJ-WkSmP8",
+    "percentToQualify": 75,
+    "password": "Free To Copy",
+    "records": [
+        {
+        "user": "LouiLatino",
+            "link": "https://youtu.be/IuAyVioHYuU",
+            "percent": 100,
+            "hz": 240
+        },
+        {
+        "user": "Raziel938",
+            "link": "",
+            "percent": 100,
+            "hz": 180
+        },
+        {
+        "user": "WillySilly420",
+            "link": "https://www.youtube.com/watch?v=6y7APepzrA8",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}
