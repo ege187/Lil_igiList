@@ -143,6 +143,18 @@
         "records": [
         ],
         "password": "None"
+    },
+    {
+        "name": "Biohazard",
+        "id": 61997741,
+        "author": "Artu",
+        "creators": ["Artu"],
+        "verifier": "ege27_",
+        "percentToQualify": 67,
+        "verification": "https://www.youtube.com/watch?v=1KGs87pGfc0",
+        "records": [
+        ],
+        "password": "None"
     }
     
 ]
