@@ -4,11 +4,11 @@
         "id": 107238250,
         "author": "nothawkyre",
         "creators": ["nothawkyre and more"],
-        "verifier": "VerifierName",
-        "percentToQualify": 100,
+        "verifier": "ege27_",
+        "percentToQualify": 66,
         "verification": "https://youtube.com/...video",
         "records": [
-            { "user": "Player1", "percent": 100, "link": "https://..." }
         ],
         "password": "1234"
     }
+]
